@@ -1,38 +1,166 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+:root {
+  --primary-color: #78c9c8;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes scroll {
+  from {
+  }
+  to {
+    background-color: var(--primary-color);
+    box-shadow: #ddd 0px 0px 10px 0px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+* {
+  font-family: "Bebas Neue";
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.root-container {
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+header {
+  height: 100vh;
+  width: 100%;
+  background: url("./assets/images/bg-image.jpg");
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+}
+
+header > nav {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  top: 0;
+}
+
+header > nav > ul {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  height: 80px;
+  margin: 0;
+}
+
+header > nav > ul > li {
+  display: inline;
+  list-style: none;
+}
+
+header > nav > ul > li > img {
+  height: 64px;
+  border-radius: 8px;
+}
+
+header > nav > ul > ul > li {
+  display: inline;
+  list-style: none;
+  font-size: medium;
+  font-weight: bold;
+  color: white;
+  font-size: x-large;
+  margin-right: 50px;
+  letter-spacing: 2px;
+}
+
+header > nav > ul > ul > li:hover {
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+main > section{
+  display: flex;
+  height: 100vh;
+}
+
+main > section > div{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+main > section > div> h1{
+  padding-top: 80px;
+  text-align: center;
+  font-weight: bold;
+}
+
+main > section > div> img{
+  height: 70vh;
+  width: auto;
+}
+
+main > section > div> h2{
+  width: 40vw;
+  color : white;
+}
+
+main > section > div> .contact-form{
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+}
+
+main > section > div> .contact-form input{
+  width: 100%;
+  padding : 4px 10px;
+  border : 1px solid white;
+  background-color: black;
+  color : white;
+  height: 40px;
+  outline: none !important;
+  margin-bottom : 10px;
+}
+
+main > section > div> .contact-form button{
+  width: 40%;
+  align-self: flex-end;
+  padding : 4px 10px;
+  border : 1px solid white;
+  background-color: black;
+  color : white;
+  height: 40px;
+}
+
+main > section > div> .contact-form button:hover{
+  background-color: #78c9c8;
+  cursor: pointer;
+}
+
+main > section > div> .contact-form input:focus{
+  border : 1px solid #78c9c8;
+}
+
+.scrolling {
+  animation: 500ms ease scroll forwards;
+}
+
+header > nav.scrolling > ul > ul > li {
+  color: black;
+}
+
+header > nav.scrolling > ul > ul > li:hover {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.background-primary{
+  background-color: var(--primary-color);
 }
+ .background-black{
+   background-color: black;
+   height: 70vh;
+   padding : 20px;
+   border : 4px double black;
+ }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+footer{
+  background-color: black;
+  color : white;
 }
