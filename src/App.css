@@ -29,6 +29,7 @@ header {
   height: 100vh;
   width: 100%;
   background: url("./assets/images/bg-image.jpg");
+  background-size: cover;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -75,67 +76,67 @@ header > nav > ul > ul > li:hover {
   cursor: pointer;
 }
 
-main > section{
+main > section {
   display: flex;
   height: 100vh;
 }
 
-main > section > div{
+main > section > div {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-main > section > div> h1{
+main > section > div > h1 {
   padding-top: 80px;
   text-align: center;
   font-weight: bold;
 }
 
-main > section > div> img{
+main > section > div > img {
   height: 70vh;
   width: auto;
 }
 
-main > section > div> h2{
+main > section > div > h2 {
   width: 40vw;
-  color : white;
+  color: white;
 }
 
-main > section > div> .contact-form{
+main > section > div > .contact-form {
   width: 40vw;
   display: flex;
   flex-direction: column;
 }
 
-main > section > div> .contact-form input{
+main > section > div > .contact-form input {
   width: 100%;
-  padding : 4px 10px;
-  border : 1px solid white;
+  padding: 4px 10px;
+  border: 1px solid white;
   background-color: black;
-  color : white;
+  color: white;
   height: 40px;
   outline: none !important;
-  margin-bottom : 10px;
+  margin-bottom: 10px;
 }
 
-main > section > div> .contact-form button{
+main > section > div > .contact-form button {
   width: 40%;
   align-self: flex-end;
-  padding : 4px 10px;
-  border : 1px solid white;
+  padding: 4px 10px;
+  border: 1px solid white;
   background-color: black;
-  color : white;
+  color: white;
   height: 40px;
 }
 
-main > section > div> .contact-form button:hover{
+main > section > div > .contact-form button:hover {
   background-color: #78c9c8;
   cursor: pointer;
 }
 
-main > section > div> .contact-form input:focus{
-  border : 1px solid #78c9c8;
+main > section > div > .contact-form input:focus {
+  border: 1px solid #78c9c8;
 }
 
 .scrolling {
@@ -150,17 +151,17 @@ header > nav.scrolling > ul > ul > li:hover {
   color: white;
 }
 
-.background-primary{
+.background-primary {
   background-color: var(--primary-color);
 }
- .background-black{
-   background-color: black;
-   height: 70vh;
-   padding : 20px;
-   border : 4px double black;
- }
-
-footer{
+.background-black {
   background-color: black;
-  color : white;
+  height: 70vh;
+  padding: 20px;
+  border: 4px double black;
+}
+
+footer {
+  background-color: black;
+  color: white;
 }
