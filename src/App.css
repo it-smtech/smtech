@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 :root {
-  --primary-color: #20aaa8;
+  --primary-color: #ece5e7;
 }
 
 @keyframes scroll {
@@ -13,7 +13,7 @@
 }
 
 * {
-  font-family: "Bebas Neue";
+  font-family: Roboto, Helvetica, sans-serif;
 }
 
 html {
@@ -100,7 +100,7 @@ main > section > div > img {
 
 main > section > div > h2 {
   width: 40vw;
-  color: white;
+  color: rgb(7, 1, 1);
 }
 
 main > section > div > .contact-form {
@@ -112,31 +112,47 @@ main > section > div > .contact-form {
 main > section > div > .contact-form input {
   width: 100%;
   padding: 4px 10px;
-  border: 1px solid white;
-  background-color: black;
-  color: white;
+  border: 1px solid rgb(0, 0, 0);
+  background-color: rgb(243, 237, 237);
+  color: rgb(0, 0, 0);
   height: 40px;
   outline: none !important;
   margin-bottom: 10px;
+  box-shadow: rgb(163, 123, 123) 4px 4px 20px;
+}
+main > section > div > .contact-form textarea {
+  width: 100%;
+  padding: 4px 10px;
+  border: 1px solid rgb(0, 0, 0);
+  background-color: rgb(243, 237, 237);
+  color: rgb(0, 0, 0);
+  height: 200px;
+  outline: none !important;
+  margin-bottom: 10px;
+  box-shadow: rgb(163, 123, 123) 4px 4px 20px;
 }
 
 main > section > div > .contact-form button {
   width: 40%;
   align-self: flex-end;
   padding: 4px 10px;
-  border: 1px solid white;
-  background-color: black;
-  color: white;
+  border: 1px solid rgb(0, 0, 0);
+  background-color: rgb(243, 237, 237);
+  color: rgb(0, 0, 0);
   height: 40px;
+  box-shadow: rgb(163, 123, 123) 4px 4px 20px;
 }
 
 main > section > div > .contact-form button:hover {
-  background-color: #78c9c8;
+  background-color: #cebec2;
   cursor: pointer;
 }
 
 main > section > div > .contact-form input:focus {
-  border: 1px solid #78c9c8;
+  border: 1px solid #cebec2;
+}
+main > section > div > .contact-form textarea:focus {
+  border: 1px solid #cebec2;
 }
 
 .scrolling {
@@ -155,10 +171,12 @@ header > nav.scrolling > ul > ul > li:hover {
   background-color: var(--primary-color);
 }
 .background-black {
-  background-color: black;
   height: 70vh;
   padding: 20px;
-  border: 4px double black;
+  box-sizing: border-box;
+  width: 50%;
+  margin: 20px auto;
+  box-shadow: rgb(163, 123, 123) 4px 4px 20px;
 }
 
 footer {
