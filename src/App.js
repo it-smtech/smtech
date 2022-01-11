@@ -1,27 +1,12 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import Logo from "./assets/images/logo.png";
 import About from "./assets/images/about.png";
 import Services from "./assets/images/services.png";
 import Offers from "./assets/images/offers.png";
-import Contact from "./assets/images/contact.png";
-import "./App.css";
 
-const arrayFeature = [
-  {
-    title: "Mission",
-    desc: "Our main mission is to support our customers in the development of their IT systems",
-  },
-  {
-    title: "Vision",
-    desc: "Our vision is to create a better relationship between customers and IT services providers",
-  },
-  {
-    title: "Values",
-    desc: `We keep our promises and are committed to doing business the right way,      
-  We provide quality products and services tham meet our customers needs
-  and We encourage innovation to meet challenges`,
-  },
-];
+import HeaderMMI from "./component/Header";
+import "./App.css";
+import ContactUs from "./component/ContactUs";
 
 const App = () => {
   const aboutUsRef = useRef(null);
@@ -30,13 +15,8 @@ const App = () => {
   const contactUsRef = useRef(null);
   const [scroll, setScroll] = useState(false);
 
-  const [descIndex, setDescIndex] = useState(0);
-
-  useEffect(() => {
-    setTimeout(() => setDescIndex((descIndex + 1) % 3), 5000);
-  }, [descIndex]);
-
   const clickMenuHandler = (view) => {
+    console.log("Test Mahmoud");
     switch (view) {
       case "about":
         aboutUsRef.current.scrollIntoView({ behavior: "smooth" });
@@ -65,11 +45,6 @@ const App = () => {
     else setScroll(false);
   };
 
-  const [content, setContent] = useState({});
-  const changeHandler = (name) => (e) => {
-    setContent({ ...content, [name]: e.target.value });
-  };
-
   return (
     <div className="root-container" onScroll={scrollHandler}>
       <header>
@@ -87,20 +62,7 @@ const App = () => {
             </ul>
           </ul>
         </nav>
-
-        <div
-          key={descIndex}
-          className="w-25"
-          style={{ color: "white", marginTop: "30vh", marginLeft: "10vw" }}
-        >
-          <h1 className="animate__animated animate__fadeInUp">
-            {arrayFeature[descIndex].title}
-          </h1>
-
-          <h4 className="animate__animated animate__fadeInUp">
-            {arrayFeature[descIndex].desc}{" "}
-          </h4>
-        </div>
+        <HeaderMMI></HeaderMMI>
       </header>
       <main>
         <section ref={aboutUsRef} className="row m-0">
@@ -179,46 +141,7 @@ const App = () => {
             <img src={Services} alt="services" />
           </div>
         </section>
-        <section ref={contactUsRef} className="background-primary row m-0">
-          <div className="col-12">
-            <h1>Contact us</h1>
-          </div>
-
-          <div className="col-md-6">
-            <img src={Contact} alt="contact" />
-          </div>
-
-          <div className="col-md-6 background-black">
-            <div className="contact-form">
-              <input
-                onChange={changeHandler("name")}
-                type="text"
-                placeholder=" Your Full Name"
-              />
-              <input
-                onChange={changeHandler("email")}
-                type="email"
-                placeholder=" Your Email"
-              />
-              <input
-                onChange={changeHandler("subject")}
-                type="text"
-                placeholder="Object"
-              />
-
-              <textarea placeholder="Message..." />
-              <button
-                clickHandler={() =>
-                  (window.location = `mailto:mahmoud.missawi@gmail.com?subject=${encodeURIComponent(
-                    content.subject
-                  )}&body=${encodeURIComponent(content.body)}`)
-                }
-              >
-                Send message
-              </button>
-            </div>
-          </div>
-        </section>
+        <ContactUs ref={contactUsRef}></ContactUs>
       </main>
       <footer className="d-flex justify-content-center">
         <p>All right reserved SM Tech Consulting® {new Date().getFullYear()}</p>
