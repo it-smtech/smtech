@@ -16,7 +16,6 @@ const App = () => {
   const [scroll, setScroll] = useState(false);
 
   const clickMenuHandler = (view) => {
-    console.log("Test Mahmoud");
     switch (view) {
       case "about":
         aboutUsRef.current.scrollIntoView({ behavior: "smooth" });
