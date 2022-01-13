@@ -140,7 +140,7 @@ const App = () => {
             <img src={Services} alt="services" />
           </div>
         </section>
-        <ContactUs ref={contactUsRef}></ContactUs>
+        <ContactUs innerRef={contactUsRef}></ContactUs>
       </main>
       <footer className="d-flex justify-content-center">
         <p>All right reserved SM Tech Consulting® {new Date().getFullYear()}</p>

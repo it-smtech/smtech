@@ -1,10 +1,11 @@
-import React, { Component } from "react";
+import React, { Component, useRef } from "react";
 import Contact from "../assets/images/contact.png";
 import emailjs from "emailjs-com";
 import Swal from "sweetalert2";
 class ContactUs extends Component {
   constructor(props) {
     super(props);
+    this.forwardedRef = React.createRef();
     this.state = { name: "", email: "", subject: "", message: "" };
     this.submitHandler = this.submitHandler.bind(this);
   }
@@ -71,8 +72,9 @@ class ContactUs extends Component {
   }
   render() {
     const { name, email, subject, message } = this.state;
+
     return (
-      <section className="background-primary row m-0">
+      <section ref={this.props.innerRef} className="background-primary row m-0">
         <div className="col-12">
           <h1>Contact us</h1>
         </div>
@@ -87,24 +89,28 @@ class ContactUs extends Component {
               <input
                 type="text"
                 value={name}
+                required="required"
                 placeholder=" Your Full Name"
                 onChange={this.nameChangeHandler}
               />
               <input
                 type="email"
                 value={email}
+                required="required"
                 placeholder=" Your email"
                 onChange={this.emailChangeHandler}
               />
               <input
                 type="text"
                 value={subject}
+                required="required"
                 placeholder="Object"
                 onChange={this.subjectChangeHandler}
               />
 
               <textarea
                 value={message}
+                required="required"
                 placeholder="Message..."
                 onChange={this.messageChangeHandler}
               />
@@ -117,4 +123,6 @@ class ContactUs extends Component {
   }
 }
 
-export default ContactUs;
+export default React.forwardRef((props, ref) => (
+  <ContactUs innerRef={ref} {...props} />
+));
