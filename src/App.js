@@ -4,7 +4,7 @@ import About from "./assets/images/about.png";
 import Services from "./assets/images/services.png";
 import Offers from "./assets/images/offers.png";
 
-import HeaderMMI from "./component/Header";
+import Header from "./component/Header";
 import "./App.css";
 import ContactUs from "./component/ContactUs";
 
@@ -61,7 +61,7 @@ const App = () => {
             </ul>
           </ul>
         </nav>
-        <HeaderMMI></HeaderMMI>
+        <Header></Header>
       </header>
       <main>
         <section ref={aboutUsRef} className="row m-0">

@@ -99,8 +99,8 @@ main > section > div > img {
 }
 
 main > section > div > h2 {
-  width: 40vw;
   color: rgb(7, 1, 1);
+  font-size: 160%;
 }
 
 main > section > div > .contact-form {
