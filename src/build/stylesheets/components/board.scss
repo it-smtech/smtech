@@ -1,0 +1,161 @@
+@import "../variables";
+// General layout
+
+.board {
+  background: $c-background-board;
+  width: 1040px;
+  margin: auto;
+  padding: 5px;
+}
+
+.board-row {
+  display: inline-flex;
+}
+
+.player-stats-div {
+  display: flex;
+  flex-direction: row;
+  border: $border;
+  margin: 10px;
+  padding: 10px;
+}
+
+.property-stats-div {
+  border: $border;
+  padding: 10px;
+}
+
+// Grid styling
+
+.box {
+  text-align: center;
+
+  // Squares
+  &.outer {
+    border: $border;
+    background: $c-background-square;
+
+    &.corner {
+      height: $edge-long;
+      width: $edge-long;
+    }
+
+    &.left {
+      height: $edge-short;
+      width: $edge-long;
+      display: inline-flex;
+      flex-direction: row-reverse;
+    }
+
+    &.right {
+      height: $edge-short;
+      width: $edge-long;
+      display: inline-flex;
+    }
+
+    &.top {
+      height: $edge-long;
+      width: $edge-short;
+      display: inline-flex;
+      flex-direction: column-reverse;
+    }
+
+    &.bottom {
+      height: $edge-long;
+      width: $edge-short;
+    }
+  }
+
+  // Board internals
+  &.inner {
+    height: $edge-short;
+    background: #ebebe0;
+
+    &.filler-large {
+      width: $edge-short * 9.2;
+    }
+
+    &.filler-medium {
+      width: $edge-short * 3;
+    }
+
+    &.filler-small {
+      width: $edge-short * 1.2;
+    }
+
+    &.content-large {
+      width: $edge-short * 5;
+      overflow: visible;
+    }
+
+    &.content-medium {
+      width: $edge-short * 3;
+      overflow: visible;
+    }
+
+    &.content-small {
+      width: $edge-short;
+      overflow: visible;
+    }
+  }
+}
+
+// Colour markers
+
+.groupDiv {
+  &.top {
+    height: 15%;
+    width: 100%;
+    border-top: $border;
+  }
+
+  &.bottom {
+    height: 15%;
+    width: 100%;
+    border-bottom: $border;
+  }
+
+  &.left {
+    height: 100%;
+    width: 15%;
+    border-left: $border;
+  }
+
+  &.right {
+    height: 100%;
+    width: 15%;
+    border-right: $border;
+  }
+
+  &.brown {
+    background-color: $c-prop-brown;
+  }
+
+  &.sky_blue {
+    background-color: $c-prop-skyblue;
+  }
+
+  &.pink {
+    background-color: $c-prop-pink;
+  }
+
+  &.orange {
+    background-color: $c-prop-orange;
+  }
+
+  &.red {
+    background-color: $c-prop-red;
+  }
+
+  &.yellow {
+    background-color: $c-prop-yellow;
+  }
+
+  &.green {
+    background-color: $c-prop-green;
+  }
+
+  &.dark_blue {
+    background-color: $c-prop-darkblue;
+  }
+}
